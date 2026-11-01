@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=" />
+        <title>PIXL - Kitchen</title>
+        <link rel="stylesheet" href="shared.css" />
+        <link rel="stylesheet" href="kitchen.css"/>
+    </head>
+    <body class="kitchen">
+        <header class="khead">
+            <a href="/" class="brand">PIXL CAFE <small>KITCHEN DISPLAY</small></a>
+            <div>
+                <span id="conn">● Connecting</span>
+                <span id="clock"></span>
+                <button id="sound" class="kbtn">♫ Sound on</button>
+                <button id="full" class="kbtn">⛶ Fullscreen</button>
+            </div>
+        </header>
+        <main class="kgrid">
+            <section>
+                <h2>NEW <b id="ncount">0</b></h2>
+                <div id="new" class="stack"></div>
+            </section>
+            <section>
+                <h2>PREPARING <b id="pcount">0</b></h2>
+                <div id="preparing" class="stack"></div>
+            </section>
+            <section>
+                <h2>READY <b id="rcount">0</b></h2>
+                <div id="ready" class="stack"></div>
+            </section>
+        </main>
+        <div id="toast" class="toast"></div>
+        <script src="socket.io.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
