@@ -1,0 +1,301 @@
+body.kitchen {
+  background: #191916;
+  color: #f7f5f0;
+  min-height: 100vh;
+}
+.khead {
+  height: 76px;
+  padding: 0 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #22221e;
+  border-bottom: 1px solid #393832;
+  position: sticky;
+  top: 0;
+}
+.khead .brand small {
+  color: #a9a394;
+}
+.khead > div {
+  color: #a9a394;
+}
+.kgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 22px;
+}
+.kgrid section {
+  background: #22221e;
+  border-radius: 18px;
+  padding: 16px;
+  min-height: 70vh;
+}
+.kgrid h2 {
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: #d5d0c5;
+  display: flex;
+  justify-content: space-between;
+}
+.kgrid h2 b {
+  color: #a9a394;
+}
+.stack {
+  display: grid;
+  gap: 12px;
+}
+.kcard {
+  padding: 16px;
+  border-radius: 14px;
+  background: #2c2b26;
+  border-left: 4px solid #c88c4d;
+}
+.kcard.prep {
+  border-color: #7eb79a;
+}
+.kcard.ready {
+  border-color: #83a9d4;
+}
+.kcard.late {
+  box-shadow: 0 0 0 1px #c75d52;
+}
+.kcard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kcard h3 {
+  margin: 0;
+  font-size: 22px;
+}
+.kcard p {
+  margin: 5px 0;
+  color: #c4beb2;
+}
+.kcard ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+.kbtn {
+  background: #37362f;
+  color: #eee;
+  border: 1px solid #514f45;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.kbtn.action {
+  background: #8a6046;
+  border-color: #8a6046;
+  color: #fff;
+}
+.kactions {
+  display: flex;
+  gap: 8px;
+}
+.empty {
+  color: #77746b;
+  text-align: center;
+  padding: 35px;
+}
+.kitchen #conn {
+  color: #7eb79a;
+}
+@media (max-width: 800px) {
+  .kgrid {
+    grid-template-columns: 1fr;
+  }
+  .kgrid section {
+    min-height: auto;
+  }
+  .khead > div {
+    font-size: 12px;
+  }
+}
+
+/* Kitchen display: focused contrast with quick, readable motion */
+body.kitchen {
+  background:
+    radial-gradient(ellipse at 50% -15%, #3e3428 0, transparent 43%), #191916;
+}
+.khead {
+  z-index: 4;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px #0002;
+}
+.khead .brand {
+  transition: letter-spacing 0.25s;
+}
+.khead .brand:hover {
+  letter-spacing: 0.17em;
+}
+.kgrid section {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ffffff0d;
+  box-shadow:
+    inset 0 1px #ffffff09,
+    0 16px 42px #0002;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+}
+.kgrid section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c88c4d88, transparent);
+}
+.kgrid section:nth-child(2):before {
+  background: linear-gradient(90deg, transparent, #7eb79a99, transparent);
+}
+.kgrid section:nth-child(3):before {
+  background: linear-gradient(90deg, transparent, #83a9d4aa, transparent);
+}
+.kgrid h2 {
+  position: sticky;
+  top: 76px;
+  margin-top: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ffffff12;
+  z-index: 2;
+  background: #22221e;
+}
+.kgrid h2 b {
+  min-width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff0b;
+  color: #eee;
+}
+.kcard {
+  position: relative;
+  overflow: hidden;
+  animation: ticket-in 0.38s var(--ease-out) both;
+  transition:
+    transform 0.25s var(--ease-spring),
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+.kcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 26px #0003;
+}
+.kcard:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, transparent 50%, #ffffff09 51%);
+}
+.kcard.late {
+  animation:
+    ticket-in 0.38s var(--ease-out) both,
+    late-glow 2.2s ease-in-out infinite;
+}
+.kcard header h3 {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.kcard ul {
+  margin: 12px 0;
+  padding: 11px 0 11px 21px;
+  border-top: 1px solid #ffffff12;
+  border-bottom: 1px solid #ffffff12;
+}
+.kcard li + li {
+  margin-top: 4px;
+}
+.kbtn {
+  transition:
+    transform 0.18s var(--ease-spring),
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.kbtn:hover {
+  transform: translateY(-2px);
+  background: #46443a;
+  box-shadow: 0 6px 14px #0003;
+}
+.kbtn:active {
+  transform: scale(0.96);
+}
+.kbtn.action {
+  box-shadow: 0 5px 14px #0003;
+}
+.kbtn.action:hover {
+  background: #a16f50;
+  border-color: #a16f50;
+}
+.empty {
+  animation: page-in 0.4s var(--ease-out) both;
+}
+.kitchen #conn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.kitchen #conn::first-letter {
+  animation: soft-pulse 1.5s ease-in-out infinite;
+}
+@keyframes ticket-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes late-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px #c75d52,
+      0 0 0 0 #c75d5220;
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px #c75d52,
+      0 0 0 7px #c75d5200;
+  }
+}
+@media (max-width: 800px) {
+  .kgrid {
+    padding: 14px;
+  }
+  .kgrid section {
+    padding: 14px;
+  }
+  .kgrid h2 {
+    top: 76px;
+  }
+}
+/* Keep section headings in normal flow so they cannot cover ticket headers. */
+.kgrid section {
+  overflow: visible;
+}
+.kgrid h2 {
+  position: relative;
+  top: auto;
+  z-index: 1;
+}
+.kcard header {
+  position: relative;
+  z-index: 1;
+  min-height: 30px;
+}
+.kcard header h3,
+.kcard header > b {
+  color: #f7f5f0;
+}
